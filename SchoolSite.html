@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bluewave School</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #f4f8fc;
+            color: #1c2a4b;
+        }
+        header {
+            background-color: #205cdb;
+            color: #fff;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+        .school-name {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        nav li {
+            display: inline;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+            padding: 6px 10px;
+            border-radius: 4px;
+        }
+        nav a:hover {
+            background-color: #163d80;
+            color: #e8f2ff;
+        }
+
+        main section {
+            padding: 40px 0;
+            border-bottom: 1px solid #e1e7ef;
+        }
+        /* Home Section */
+        #home {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 32px;
+            justify-content: space-between;
+        }
+        .banner-image {
+            width: 350px;
+            max-width: 100%;
+            border-radius: 13px;
+            box-shadow: 0 4px 22px rgba(32,92,219,0.11);
+        }
+        .welcome-content {
+            flex: 1 1 280px;
+        }
+        .home-btn {
+            background-color: #205cdb;
+            color: #fff;
+            border: none;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 22px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .home-btn:hover {
+            background-color: #1844a8;
+            transform: scale(1.05);
+        }
+
+        /* About Section */
+        #about p {
+            font-size: 1.11rem;
+            line-height: 1.6;
+        }
+
+        /* Courses Section */
+        .courses-list {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+        }
+        .course-card {
+            background: #ffffff;
+            flex: 1 1 220px;
+            padding: 22px;
+            border-radius: 8px;
+            box-shadow: 0 2px 7px rgba(32, 92, 219, 0.05);
+            text-align: center;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .course-card:hover {
+            box-shadow: 0 4px 16px rgba(32, 92, 219, 0.15);
+            transform: translateY(-2px) scale(1.03);
+        }
+        .course-title {
+            font-size: 1.18rem;
+            font-weight: 600;
+            color: #1946b3;
+            margin-bottom: 7px;
+        }
+
+        /* Contact Section */
+        .contact-form {
+            max-width: 420px;
+            margin: 0 auto;
+            background: #f9fbff;
+            padding: 22px;
+            border-radius: 9px;
+            box-shadow: 0 2px 6px rgba(32, 92, 219, 0.08);
+        }
+        .form-group {
+            margin-bottom: 16px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+        }
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 9px;
+            border: 1px solid #b4c8e4;
+            border-radius: 3px;
+            background: white;
+            font-size: 1rem;
+        }
+        .form-group input:focus,
+        .form-group textarea:focus {
+            border-color: #5c8ded;
+            outline: none;
+        }
+        .form-btn {
+            background-color: #205cdb;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .form-btn:hover {
+            background-color: #163d80;
+            transform: scale(1.04);
+        }
+        .form-message {
+            margin-top: 10px;
+            color: green;
+            font-size: 1em;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 700px) {
+            .courses-list {
+                flex-direction: column;
+            }
+            #home {
+                flex-direction: column-reverse;
+                gap: 18px;
+                text-align: center;
+            }
+        }
+        @media (max-width: 500px) {
+            header, nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            main section {
+                padding: 22px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="school-name">Bluewave School</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#courses">Courses</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Home Section -->
+        <section id="home">
+            <div class="welcome-content">
+                <h1>Welcome to Bluewave School</h1>
+                <p style="margin: 15px 0 2px;">
+                    Empowering the students of tomorrow, today.
+                </p>
+                <!-- Interactive Button using JavaScript -->
+                <button class="home-btn" id="welcomeButton">Click Me!</button>
+                <div id="welcomeMessage" style="margin-top:12px; font-weight:600; color:#205cdb;"></div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?fit=crop&w=600&q=80" alt="School Banner" class="banner-image">
+        </section>
+        
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Us</h2>
+            <p>
+                Bluewave School has been a trusted leader in education for over 25 years.
+                Our dedicated team of teachers is committed to nurturing every child's unique talents and helping them reach their fullest potential. 
+                With a rich curriculum, modern technology, and a vibrant learning environment, we prepare our students for both academic excellence and lifelong success.
+            </p>
+        </section>
+        
+        <!-- Courses Section -->
+        <section id="courses">
+            <h2>Our Courses</h2>
+            <div class="courses-list">
+                <div class="course-card">
+                    <div class="course-title">Mathematics</div>
+                    <div>Engaging classes to build strong problem-solving skills and logical reasoning for all grade levels.</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-title">Science & Technology</div>
+                    <div>Hands-on learning in physics, chemistry, biology, and coding with real-world experiments and projects.</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-title">Arts & Languages</div>
+                    <div>Creative development in arts, music, and languages to inspire self-expression and cultural understanding.</div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <form class="contact-form" id="contactForm" autocomplete="off">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required placeholder="Your full name">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" required rows="4" placeholder="Your message"></textarea>
+                </div>
+                <button type="submit" class="form-btn">Send Message</button>
+                <div class="form-message" id="formMessage"></div>
+            </form>
+        </section>
+    </main>
+    
+    <script>
+        // JavaScript for School Website
+        // ---------------------------------------
+        // 1. Interactive "Welcome" Button
+        document.getElementById('welcomeButton').addEventListener('click', function() {
+            document.getElementById('welcomeMessage').textContent = "Welcome to our school!";
+        });
+
+        // 2. Validate Contact Form and Show Success Message
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            // Get form values
+            var name = document.getElementById('name').value.trim();
+            var email = document.getElementById('email').value.trim();
+            var message = document.getElementById('message').value.trim();
+            var formMessage = document.getElementById('formMessage');
+
+            // Email validation regex (basic)
+            var emailPattern = /^[a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            // Validation checks
+            if (name === '' || email === '' || message === '') {
+                formMessage.style.color = 'red';
+                formMessage.textContent = "Please fill in all fields.";
+                return;
+            }
+            if (!emailPattern.test(email)) {
+                formMessage.style.color = 'red';
+                formMessage.textContent = "Please enter a valid email address.";
+                return;
+            }
+
+            // If validation passes
+            formMessage.style.color = 'green';
+            formMessage.textContent = "Thank you for contacting us! Your message has been sent.";
+
+            // Optionally, display an alert as well (for requirement)
+            alert('Form submitted successfully!');
+
+            // Reset form after submission
+            document.getElementById('contactForm').reset();
+
+            // Hide the message again after 4 seconds
+            setTimeout(function() {
+                formMessage.textContent = '';
+            }, 4000);
+        });
+
+        // 3. Navigation Link Smooth Scroll (optional for nice navigation UX)
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                if (this.hash) {
+                    e.preventDefault();
+                    document.querySelector(this.hash).scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+
+    <!--
+        =====================================
+        SIMPLE SCHOOL WEBSITE - Features Used
+        =====================================
+        - Internal CSS for styles and responsive design.
+        - HTML5 semantic tags and well-labeled structure.
+        - Form with JavaScript validation and success alert.
+        - Interactive welcome button using JavaScript.
+        - Clean, school-themed blue and white color palette.
+        - Comments to clarify code for beginners.
+    -->
+</body>
+</html>
